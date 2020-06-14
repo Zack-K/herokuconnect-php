@@ -24,7 +24,7 @@ try{
 }
 ?>
 
-<table><tbody>
+<table border="1"><tbody>
     <tr><th>ID</th><th>取引先責任者</th></tr>
 <?php
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
