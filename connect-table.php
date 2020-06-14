@@ -14,6 +14,14 @@ $pdo = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
+
+try{
+	$sql = "SELECT id, name, phone  FROM salesforce.contact";
+	$stmh = $pdo->prepare($sql);
+	$stmh->execute();
+}catch (PDOException $Exception){
+	die('接続エラー: '.$Exception->getMessage());
+}
 ?>
 
 <table><tbody>
